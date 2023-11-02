@@ -27,7 +27,7 @@ function calculate(expression){
   let num2
 
   const tokens = expression.split(` `)
-
+  
   if(tokens.length === 3){
     num1 = Number(tokens[0])
     operator = tokens[1]
@@ -36,16 +36,6 @@ function calculate(expression){
       alert('Enter a valid number!')
       return
     }
-  }
-  if(tokens.length === 2){
-    operator = tokens[0]
-    num1 = Number(tokens[1])
-    if(Number.isNaN(num1)){
-      alert('Enter a valid number!')
-      return
-      }
-    }
-
     if(operator === '+'){
     return add(num1, num2)
     }
@@ -68,10 +58,22 @@ function calculate(expression){
     if(operator === '%'){
       return mod(num1, num2)
     }
-
+  }
+  if(tokens.length === 2){
+    operator = tokens[0]
+    num1 = Number(tokens[1])
+    if(Number.isNaN(num1)){
+      alert('Enter a valid number!')
+      return
+      }
+    }
     if (operator === 'sqrt') {
       return sqrt(num1);
     } 
+    else{
+      alert(`Invalid expression`)
+      return
+    }
   }
 
 
